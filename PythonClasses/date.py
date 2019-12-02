@@ -3,27 +3,37 @@
 '''Declaring Date class'''
 class Date:
     '''This class is a prototype of Date class
+    Class Date:
 
-    Hidden members of Class:
+        Hidden members of Class:
+            (int)   __day
+            (int)   __month 
+            (int)   __year 
+            (list)  __month_days
 
-    __day 
-    __month 
-    __year 
-    __month_days
+        
+        Constructors:
+            void __init__(int,int,int)
 
-    Methods:
-    Constructors:
-        void __init__(int,int,int) 
-    Setters:
-        void set_day(int)
-        void set_month(int)
-        void set_year(int) 
-    Getters:
-        int get_day()
-        int get_month()
-        int get_year()
+        Setters:
+            void set_day(int)
+            void set_month(int)
+            void set_year(int)
 
-    
+        Getters:
+            int get_day()
+            int get_month()
+            int get_year()
+        
+        Adders:
+            void add_day(int)
+            void add_month(int)
+            void add_year(int)
+        Others:
+            bool is_leap()
+            int leap_years_count()
+            int get_difference(Date)
+            void print_date()
     '''
     
     '''Hidden members of Class'''
@@ -206,10 +216,15 @@ class Date:
             exit()
 
         self.__year += num
+    
+    def print_date(self):
+        print str(d1.get_day()) + "." + str(d1.get_month()) \
+            + "." + str(d1.get_year())
 
 
 
 if __name__ == "__main__":
+
 
     d1 = Date(1,1,2011)
     d2 = Date(10,11,1594617)
@@ -219,6 +234,8 @@ if __name__ == "__main__":
 
     d5 = Date(1,1,2012)
     d6 = Date(31,12,2012)
+
+    print d1.__doc__
 
     diff1 = d2.get_difference(d1)
     diff2 = d3.get_difference(d4)
